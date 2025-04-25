@@ -30,17 +30,23 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8B5CF6",
+          DEFAULT: "#1EAEDB",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F1F0FB",
-          foreground: "#1A1F2C",
+          DEFAULT: "#000000",
+          foreground: "#FFFFFF",
+        },
+        neon: {
+          DEFAULT: "#1EAEDB",
+          glow: "#1EAEDB80",
         },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.5s ease-out",
+        "neon-pulse": "neon-pulse 2s infinite",
+        "float": "float 6s ease-in-out infinite",
       },
       keyframes: {
         "fade-in": {
@@ -50,6 +56,18 @@ export default {
         "slide-in": {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "neon-pulse": {
+          "0%, 100%": {
+            textShadow: "0 0 4px #1EAEDB40, 0 0 11px #1EAEDB40, 0 0 19px #1EAEDB40",
+          },
+          "50%": {
+            textShadow: "0 0 4px #1EAEDB, 0 0 11px #1EAEDB, 0 0 19px #1EAEDB",
+          },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
         },
       },
     },
